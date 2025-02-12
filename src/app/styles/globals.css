@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media screen and (max-width: 480px) {
+  *{
+    background-color: #171717;
+  }
+  .input-search{
+    border-bottom: 2px solid white;
+    outline: none;
+    text-align: center;
+    width: 250px;
+  }
+  .icon-search{
+    width: 40px;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70%;
+    color: #fff;
+  }
+  .weather{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .celsius{
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+  .information-text{
+    font-size: 1.2rem;
+  }
+  .icon-weather{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+  }
+}
