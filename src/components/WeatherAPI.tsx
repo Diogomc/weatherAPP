@@ -38,13 +38,7 @@ export const WeatherAPI = () => {
 
     return (
         <div className="container">
-            <div className="search-area">
-                <input className="input-search" type="text" onChange={(e) => setInputSearch(e.target.value)} placeholder="search" />
 
-                <button onClick={handleWeatherCity}><img className="icon-search" src="search.png" alt="" /></button>
-                
-                {error && <p className="text-red-500 error" >{error}</p>}
-            </div>
             <div className="weather-area">
                 {weather.map(item => (
                     <div className="weather" key={item.location.tz_id}>
@@ -53,6 +47,11 @@ export const WeatherAPI = () => {
                         <p className="celsius">{Math.trunc(item.current.temp_c)} °C</p>
                         <h1 className="information-text">{item.location.name}, {item.location.country}.</h1>
                         <p className='local-hour'>{item.location.localtime}</p>
+                        <div className="search-area">
+                            <input className="input-search" type="text" onChange={(e) => setInputSearch(e.target.value)} placeholder="search" />
+                            <button onClick={handleWeatherCity}><img className="icon-search" src="search.png" alt="" /></button>
+                            {error && <p className="text-red-500 error" >{error}</p>}
+                        </div>
 
                     </div>
                 ))}

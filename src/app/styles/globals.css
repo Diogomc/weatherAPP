@@ -62,4 +62,7 @@ body {
     height: 90px;
     object-fit: cover;
   }
+  .ft{
+    margin-top: 200px;
+  }
 }
