@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -16,12 +16,17 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ft{
+  margin-top: 220px;
 }
 
-
 @media screen and (max-width: 480px) {
-  *{
-    background-color: #171717;
+  body{
+    background-image: url('/background-mobile.jpg');
   }
   .input-search{
     border-bottom: 2px solid white;

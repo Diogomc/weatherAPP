@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        title:['roboto, oswald']
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

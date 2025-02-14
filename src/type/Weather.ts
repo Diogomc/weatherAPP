@@ -4,6 +4,7 @@ export type Weather = {
         name:string
         region:string
         country:string
+        localtime:string
     },
     current:{
         temp_c:any;
