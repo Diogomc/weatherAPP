@@ -4,7 +4,13 @@
     width: 100%;
     display: flex;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    justify-content: space-around;
+    justify-content: center;
+}
+.container-menu{
+    display: flex;
+}
+.menu-icon{
+    display: none;
 }
 .menu-ul{
     display: flex;
@@ -15,6 +21,7 @@
 .menu-item{
     padding: 10px;
     font-size: 1.2rem;
+    list-style: none;
 }
 .menu-item a:hover{
     color: #0077B5;
@@ -33,6 +40,32 @@
     filter: saturate(100%);
 }
 @media screen and (max-width: 480px) {
-    
-    
+    .menu-item{
+        list-style: none;
+    }
+    .menu-item-icon{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+    .menu-ul{
+        flex-direction: column;
+    }
+    .nav-bar{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 10px;
+    }
+    .menu-opened{
+        display: none;
+        
+    }
+    .container-menu{
+        justify-content: center;
+    }
 }

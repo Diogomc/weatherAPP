@@ -7,11 +7,14 @@ export type Weather = {
         localtime:string
     },
     current:{
-        temp_c:any;
+        temp_c:any
         condition:{
             text:string
             icon:string
         }
+        wind_kph:number
+        humidity:number
+        feelslike_c:number
     }
     
     
