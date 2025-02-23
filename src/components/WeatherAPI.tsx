@@ -20,6 +20,16 @@ export const WeatherAPI = () => {
     const weekDay = [
         'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
     ]
+
+    const weatherIcons: { [key: string]: string } = {
+        sunny: 'sunny.svg',
+        clear: 'clear.svg',
+        cloudy: 'cloudy.svg',
+        overcast: 'overcast.svg',
+        rain: 'rain.svg',
+        mist: 'Mist.svg',
+        blizzard: 'blizzard.svg'
+    }
     const weekDayName = weekDay[date.getDay()]
     const monthName = month[date.getMonth()]
 
@@ -62,8 +72,8 @@ export const WeatherAPI = () => {
                             <p className='text-1xl text-date'>{`${weekDayName}, ${todayDate}, ${monthName}`}</p>
                         </div>
                         <div className="temperature">
-                            <p className='text-5xl'>{`${Math.trunc(item.current.temp_c)} °C`}</p>
-                            <p><img className='weather-icon' src={item.current.condition.icon} alt={item.current.condition.text} /></p>
+                            <p>{`${Math.trunc(item.current.temp_c)} °C`}</p>
+                            <p><img className='weather-icon' src={weatherIcons[item.current.condition.text.toLowerCase()] || item.current.condition.icon} alt={item.current.condition.text} /></p>
                         </div>
                         <div className="local">
                             <p>{`${item.location.name}, ${item.location.country}`}</p>
@@ -72,13 +82,13 @@ export const WeatherAPI = () => {
                     </div>
                 ))}
             </div>
-            <h1 className='text-2xl mt-10'>Text your city: </h1>
+            <h1 className='title-search'>Text your city: </h1>
             <div className="search-area">
                 <input className="input-search" type="text" onChange={(e) => setInputSearch(e.target.value)} placeholder="search" />
                 <button className='btn-search' onClick={handleWeatherCity}>Search</button>
                 {error && <p className="text-red-500 error" >{error}</p>}
             </div>
-            <h2 className='text-2xl mt-20'>Air Informations</h2>
+            <h2 className='title-search'>Air Informations</h2>
             {weather.map(item => (
                 <div key={item.location.tz_id} className='aditional-informations'>
                     <div className="humidity">
