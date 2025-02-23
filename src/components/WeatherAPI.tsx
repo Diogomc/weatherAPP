@@ -82,7 +82,7 @@ export const WeatherAPI = () => {
                     </div>
                 ))}
             </div>
-            <h1 className='title-search'>Text your city: </h1>
+            <h1 className='title-search'>Enter your city: </h1>
             <div className="search-area">
                 <input className="input-search" type="text" onChange={(e) => setInputSearch(e.target.value)} placeholder="search" />
                 <button className='btn-search' onClick={handleWeatherCity}>Search</button>
